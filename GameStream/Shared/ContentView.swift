@@ -78,9 +78,86 @@ struct InicioYRegistroView:View {
 
 struct  InicioSessionView: View {
     
+    @State var correo = ""
+    
+    @State var passwords = ""
+    
     var body: some View {
         
-        Text("Soy la vista de session view")
+        ScrollView {
+            
+            VStack (alignment: .leading) {
+                
+                
+                Text("Correo Electronico")
+                    .foregroundColor(Color("Dark-Cian"))
+                
+                ZStack(alignment: .leading){
+                    
+                    if correo.isEmpty{
+                        
+                        Text("ejemplo@gmail.com")
+                            .font(.caption)
+                            .foregroundColor(/*@START_MENU_TOKEN@*/.gray/*@END_MENU_TOKEN@*/)
+                    }
+               
+                        
+                    
+                    TextField("", text: $correo)
+                    
+                    
+                    
+                    
+                }
+                
+                
+                Divider().frame(height: 1)
+                    .background(Color("Dark-Cian"))
+                    .padding(.bottom)
+                
+                
+                
+                Text("Password")
+                    .foregroundColor(.white)
+                
+                ZStack(alignment: .leading){
+                    
+                    if passwords.isEmpty{
+                        
+                        Text("Escribe tu password")
+                            .font(.caption)
+                            .foregroundColor(/*@START_MENU_TOKEN@*/.gray/*@END_MENU_TOKEN@*/)
+                    }
+               
+                        
+                    
+                   SecureField("", text: $passwords)
+                    
+                    
+                    
+                    
+                }
+                
+                
+                Divider().frame(height: 1)
+                    .background(Color("Dark-Cian"))
+                    .padding(.bottom)
+                
+                Text("Olvidaste tu password?")
+                    .font(.footnote)
+                    .frame(width: 300, alignment: .trailing)
+                    .foregroundColor(Color("Dark-Cian"))
+                
+                
+                
+            }.padding(.horizontal, 77.0)
+            
+        }
+       
+        
+        
+        
+        
     }
 }
 
