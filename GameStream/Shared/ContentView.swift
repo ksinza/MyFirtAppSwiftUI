@@ -18,10 +18,10 @@ struct ContentView: View {
                     .frame(width: 250)
                     .padding( .bottom, 42 )
                 
-               InicioYRegistroView()
+                InicioYRegistroView()
             }
             
-          
+            
         }
     }
 }
@@ -51,13 +51,13 @@ struct InicioYRegistroView:View {
                 Button ("REGISTRATE") {
                     print("REGISTRATE")
                     tipoInicioSession=false;
-
+                    
                 }
                 
                 .foregroundColor(tipoInicioSession ? .gray : .white)
                 
                 Spacer()
-              
+                
             }
             
             Spacer(minLength: 42)
@@ -98,10 +98,10 @@ struct  InicioSessionView: View {
                         
                         Text("ejemplo@gmail.com")
                             .font(.caption)
-                            .foregroundColor(/*@START_MENU_TOKEN@*/.gray/*@END_MENU_TOKEN@*/)
+                            .foregroundColor(.gray)
                     }
-               
-                        
+                    
+                    
                     
                     TextField("", text: $correo)
                     
@@ -128,10 +128,10 @@ struct  InicioSessionView: View {
                             .font(.caption)
                             .foregroundColor(/*@START_MENU_TOKEN@*/.gray/*@END_MENU_TOKEN@*/)
                     }
-               
-                        
                     
-                   SecureField("", text: $passwords)
+                    
+                    
+                    SecureField("", text: $passwords)
                     
                     
                     
@@ -147,13 +147,74 @@ struct  InicioSessionView: View {
                     .font(.footnote)
                     .frame(width: 300, alignment: .trailing)
                     .foregroundColor(Color("Dark-Cian"))
+                    .padding(.bottom)
                 
                 
+                Button (action: iniciarSession,label: {
+                    Text("INICIAR SESION")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity,
+                               alignment: .center)
+                        .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
+                        .overlay(RoundedRectangle(cornerRadius: 6.0)
+                            .stroke(Color("Dark-Cian"),
+                                    lineWidth: 3.0
+                                   ).shadow(color: .white,
+                                            radius: 6))
+                    
+                        
+                    //.frame(width: .infinity, height: 100, alignment: .center)
+                })
+
+                Text("Inicia sesion con redes sociales")
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity,
+                           alignment: .center)
+                    .padding(EdgeInsets(top: 31, leading: 18, bottom: 11, trailing: 18))
+                HStack {
+                   
+                    
+                    Button(action: iniciarSessionFacebook,label:{
+                        
+                        Text("Facebook").foregroundColor(.white)
+                            .fontWeight(.bold)
+                            .frame(maxWidth: .infinity,
+                                   alignment: .center)
+                            .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
+                            .overlay(RoundedRectangle(cornerRadius: 8.0)
+                                .stroke(lineWidth: 1.0
+                                       )
+                                    .foregroundColor(/*@START_MENU_TOKEN@*/Color("blue-gray")/*@END_MENU_TOKEN@*/))
+                        
+                    })
+                    .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color("blue-gray")/*@END_MENU_TOKEN@*/)
+                    
+                    Spacer()
+
+                    Button(action: iniciarSessionTwitter,label:{
+                      
+                        Text("Twitter").foregroundColor(.white)
+                            .fontWeight(.bold)
+                            .frame(maxWidth: .infinity,
+                                   alignment: .center)
+                            .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
+                            .overlay(RoundedRectangle(cornerRadius:8.0)
+                                .stroke(
+                                        lineWidth: 1.0
+                                )
+                                    .foregroundColor(/*@START_MENU_TOKEN@*/Color("blue-gray")/*@END_MENU_TOKEN@*/))
+                    })
+                    .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color("blue-gray")/*@END_MENU_TOKEN@*/)
+                    
+                    
+                    
+                }
                 
             }.padding(.horizontal, 77.0)
             
         }
-       
+        
         
         
         
@@ -177,9 +238,29 @@ struct ContentView_Previews: PreviewProvider {
         
         
         Image("pantalla01").resizable()
-
+        
         ContentView()
         
         
     }
 }
+
+// funcs
+
+func iniciarSession(){
+    
+    print("Estoy Iniciando sesion")
+}
+
+func iniciarSessionTwitter(){
+    
+    print("Estoy Iniciando sesion Twitter")
+}
+
+func iniciarSessionFacebook(){
+    
+    print("Estoy Iniciando sesion Facebook")
+}
+
+
+
