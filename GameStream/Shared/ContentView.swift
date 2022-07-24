@@ -9,19 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack {
-            Spacer()
-            Color( red: 19/255, green: 30/255, blue: 53/255, opacity: 1).ignoresSafeArea()
-            VStack{
-                Image("appLogo").resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 250)
-                    .padding( .bottom, 42 )
+        NavigationView {
+            
+            
+            
+            ZStack {
+                Spacer()
+                Color( red: 19/255, green: 30/255, blue: 53/255, opacity: 1).ignoresSafeArea()
+                VStack{
+                    Image("appLogo").resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 250)
+                        .padding( .bottom, 42 )
+                    
+                    InicioYRegistroView()
+                }
                 
-                InicioYRegistroView()
-            }
-            
-            
+                
+            }.navigationBarHidden(true)
         }
     }
 }
@@ -81,6 +86,7 @@ struct  InicioSessionView: View {
     @State var correo = ""
     
     @State var passwords = ""
+    @State var isPantallaHomeActive = false
     
     var body: some View {
         
@@ -215,12 +221,28 @@ struct  InicioSessionView: View {
                 
             }.padding(.horizontal, 77.0)
             
+            
+            NavigationLink(
+            destination: Home(),
+            isActive: $isPantallaHomeActive,
+            label: {
+                
+                EmptyView()
+            })
+            
         }
         
         
         
         
         
+    }
+    
+    
+    func iniciarSession(){
+        
+        print("Estoy Iniciando sesion")
+        isPantallaHomeActive = true
     }
 }
 
@@ -440,10 +462,6 @@ struct ContentView_Previews: PreviewProvider {
 
 // funcs
 
-func iniciarSession(){
-    
-    print("Estoy Iniciando sesion")
-}
 
 func registrate(){
     
