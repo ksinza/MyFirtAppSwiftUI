@@ -80,6 +80,9 @@ struct Home: View {
 
 struct PantallaHome:View {
     
+    @State var textoBusqueda = ""
+    
+    
     var body: some View{
         
         ZStack {
@@ -98,20 +101,37 @@ struct PantallaHome:View {
                 
                 HStack{
                     
-                    Button(action: {
+                    Button(action: Busqueda, label: {
+                        Image(systemName: "magnifyingglass").foregroundColor(textoBusqueda.isEmpty ? Color(.yellow) : Color("Dark-Cian")
                         
-                        print("crack")
                         
-                    }, label: {
+                        )
                         
-                        Text("Button")
+                        
                         
                     })
                     
-                    
+                    ZStack(alignment: .leading){
+                        
+                        if textoBusqueda.isEmpty{
+                            Text("Buscar un video").foregroundColor(
+                                Color( red: 174/255, green: 177/255, blue: 185/255, opacity: 1.0))
+                            
+                        }
+                        TextField("", text: $textoBusqueda)
+                                .foregroundColor(.white)
+                            
+                       
+                        
+                        
+                        
+                        
+                    }
                     
                 }
-                
+                .padding([.top, .leading, .bottom], 11.0)
+                .background(Color("blue-gray"))
+                .clipShape(Capsule())
                 
                 
 
@@ -123,6 +143,13 @@ struct PantallaHome:View {
         }.navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
        
+    }
+    
+    
+    func Busqueda(){
+        
+        print("el usuario esta buscando \(textoBusqueda)")
+        
     }
     
 }
