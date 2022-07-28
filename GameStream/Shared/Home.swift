@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import AVKit
+
 
 struct Home: View {
     
@@ -133,7 +135,10 @@ struct PantallaHome:View {
                 .background(Color("blue-gray"))
                 .clipShape(Capsule())
                 
-                
+                ScrollView(showsIndicators: false){
+                    
+                    SubModuloHome()
+                }
 
             }.padding(.horizontal,18)
             
@@ -170,12 +175,63 @@ struct SubModuloHome:View {
         
         VStack{
             
-            Text("")
+            Text("LOS MAS POPULARES")
+                .font(.title3)
+                .foregroundColor(.white)
+                .bold()
+                .frame(minWidth: 0, maxWidth: .infinity,  alignment: .leading)
+                .padding(.top)
+            
+            ZStack{
+                
+                Button(action:{
+                    url = urlVideos[0]
+                    print("URL: \(url)")
+                    
+                    isPlayerActive = true
+                    
+                }, label: {
+                    
+                    VStack(spacing:0){
+                        
+                        Image("The Witcher 3")
+                            .resizable()
+                            .scaledToFill()
+                        
+                        Text("he Witcher 3")
+                            .frame(minWidth: 0, maxWidth: .infinity,  alignment: .leading)
+                            .background(Color("blue-gray"))
+                    }
+                })
+                
+                
+                
+                Image(systemName: "play.circle.fill")
+                    .resizable()
+                    .foregroundColor(.white)
+                    .frame(width: 42, height: 42)
+                
+                
+                
+                
+                
+            } .frame(minWidth: 0, maxWidth: .infinity,  alignment: .center)
+                .padding(.vertical)
+            
 
         }
         
         
-        
+        NavigationLink(
+            destination: VideoPlayer(
+               player: AVPlayer(url: URL(string: url)!))
+            .frame(width: 400, height: 300),
+            
+            isActive: $isPlayerActive,
+            label: {
+                
+                EmptyView()
+            })
         
     }
 }
