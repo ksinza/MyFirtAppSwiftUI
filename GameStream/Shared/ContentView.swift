@@ -219,7 +219,7 @@ struct  InicioSessionView: View {
                     
                 }
                 
-            }.padding(.horizontal, 77.0)
+            }.padding(.horizontal, 42.0)
             
             
             NavigationLink(

@@ -88,19 +88,22 @@ struct PantallaHome:View {
     var body: some View{
         
         ZStack {
-            
-            Color("Marine").ignoresSafeArea()
-            
+           
+//            Color("Red").ignoresSafeArea()
+//
+            Spacer()
+            Spacer()
             VStack{
                 
-                
+                Spacer()
+                Spacer()
                 
                 
                 Image("appLogo").resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 250)
-                    .padding( .horizontal, 11.0 )
-                
+                    .padding(EdgeInsets(top: 45.0, leading: 45.0, bottom: 45.0, trailing: 45.0) )
+                   
                 HStack{
                     
                     Button(action: Busqueda, label: {
@@ -131,21 +134,29 @@ struct PantallaHome:View {
                     }
                     
                 }
-                .padding([.top, .leading, .bottom], 11.0)
+                .padding( EdgeInsets(top :10 , leading: 11.0 , bottom: 11.0, trailing: 11.0))
                 .background(Color("blue-gray"))
                 .clipShape(Capsule())
+               
                 
+                Spacer()
                 ScrollView(showsIndicators: false){
                     
                     SubModuloHome()
-                }
+                    
+                }.padding(.top, 50)
+              
+                .navigationBarHidden(true)
 
             }.padding(.horizontal,18)
+                .background(Color("Marine"))
+               
             
             
             
+        } .ignoresSafeArea()
             
-        }.navigationBarHidden(true)
+        .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
        
     }
@@ -216,10 +227,173 @@ struct SubModuloHome:View {
                 
                 
             } .frame(minWidth: 0, maxWidth: .infinity,  alignment: .center)
-                .padding(.vertical)
+            .padding(.vertical)
             
+            Text("CATEGORIAS SUGERIDAS PARA TI")
+            .font(.title3)
+            .foregroundColor(.white)
+            .bold()
+            .frame(minWidth: 0, maxWidth: .infinity,  alignment: .leading)
+            
+            
+            ScrollView(.horizontal, showsIndicators: false)
+            {
+                
+                HStack{
+                    
+                    Button(action: {
+                        
+                        print("Pulse categoria FPS")
+                        
+                    }, label: {
+                        
+                        ZStack{
+                            
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color("blue-gray"))
+                                .frame(width: 160, height: 90)
+                            
+                            
+                            Image("FPS")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 42, height: 42)
+                            
+                            
+                            
+                            
+                            
+                        }
+                        
+                        
+                    })
+                    
+                    
+                    Button(action: {
+                        
+                        print("Pulse categoria RPG")
 
+                    }, label: {
+                        
+                        ZStack{
+                            
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color("blue-gray"))
+                                .frame(width: 160, height: 90)
+                            
+                            
+                            Image("RPG")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 42, height: 42)
+                            
+                            
+                            
+                            
+                            
+                        }
+                        
+                        
+                    })
+                    
+                    Button(action: {
+                        
+                        print("Pulse categoria OpenWorld")
+                    }, label: {
+                        
+                        ZStack{
+                            
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color("blue-gray"))
+                                .frame(width: 160, height: 90)
+                            
+                            
+                            Image("OpenWorld")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 42, height: 42)
+  
+                        }
+                        
+                        
+                    })
+                    
+                }
+                
+                
+            }
+            
+            Text("RECOMENDADOS PARA TI")
+            .font(.title3)
+            .foregroundColor(.white)
+            .bold()
+            .frame(minWidth: 0, maxWidth: .infinity,  alignment: .leading)
+            
+            
+            ScrollView(.horizontal, showsIndicators: false)
+            {
+                
+                HStack{
+                    
+                    Button(action: {
+                        url = urlVideos[1]
+                        print("URL: \(url)")
+                        
+                        isPlayerActive = true
+                        
+                    }, label: {
+                        
+                        Image("Abzu")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 240, height: 135)
+                        
+                        
+                    })
+                    
+                    
+                    Button(action: {
+                        url = urlVideos[2]
+                        print("URL: \(url)")
+                        
+                        isPlayerActive = true
+                        
+                    }, label: {
+                        
+                        Image("Crash Bandicoot")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 240, height: 135)
+                        
+                        
+                    })
+                    
+                    Button(action: {
+                        url = urlVideos[3]
+                        print("URL: \(url)")
+                        
+                        isPlayerActive = true
+                        
+                    }, label: {
+                        
+                        Image("DEATH STRANDING")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 240, height: 135)
+                        
+                        
+                    })
+                    
+                }
+                
+                
+            }
+            
+            
         }
+        
+        
+       
         
         
         NavigationLink(
