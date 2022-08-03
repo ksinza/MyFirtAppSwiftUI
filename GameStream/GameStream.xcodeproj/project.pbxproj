@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A160FD5E289AF1A50077B6FA /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160FD5D289AF1A50077B6FA /* GamesView.swift */; };
+		A160FD63289AF3130077B6FA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160FD62289AF3130077B6FA /* Model.swift */; };
+		A160FD65289AF33C0077B6FA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160FD64289AF33C0077B6FA /* ViewModel.swift */; };
 		A1B37B0F289018DF00A57156 /* imagenesDefault in Resources */ = {isa = PBXBuildFile; fileRef = A1B37B0E289018DF00A57156 /* imagenesDefault */; };
 		A1C7177828832CD300A46A86 /* GameStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7176828832CC700A46A86 /* GameStreamApp.swift */; };
 		A1C7177928832CD300A46A86 /* GameStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7176828832CC700A46A86 /* GameStreamApp.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A160FD5D289AF1A50077B6FA /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
+		A160FD62289AF3130077B6FA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		A160FD64289AF33C0077B6FA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A1B37B0E289018DF00A57156 /* imagenesDefault */ = {isa = PBXFileReference; lastKnownFileType = folder; name = imagenesDefault; path = "../../../../Downloads/curso-desarrollo-app-swiftui-PantallaHomeProgramacionInterfacesEstaticas-C2/PlatziGameStream/Assets.xcassets/imagenesDefault"; sourceTree = "<group>"; };
 		A1C7176828832CC700A46A86 /* GameStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStreamApp.swift; sourceTree = "<group>"; };
 		A1C7176928832CC700A46A86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,9 +52,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A160FD5F289AF2820077B6FA /* Vistas */ = {
+			isa = PBXGroup;
+			children = (
+				A1C7176928832CC700A46A86 /* ContentView.swift */,
+				A1EF23B0288DBF5700202F1F /* Home.swift */,
+				A160FD5D289AF1A50077B6FA /* GamesView.swift */,
+			);
+			path = Vistas;
+			sourceTree = "<group>";
+		};
+		A160FD60289AF2BA0077B6FA /* Modelos */ = {
+			isa = PBXGroup;
+			children = (
+				A160FD62289AF3130077B6FA /* Model.swift */,
+			);
+			path = Modelos;
+			sourceTree = "<group>";
+		};
+		A160FD61289AF2CB0077B6FA /* VistasModelos */ = {
+			isa = PBXGroup;
+			children = (
+				A160FD64289AF33C0077B6FA /* ViewModel.swift */,
+			);
+			path = VistasModelos;
+			sourceTree = "<group>";
+		};
 		A1C7176228832CC700A46A86 = {
 			isa = PBXGroup;
 			children = (
+				A160FD61289AF2CB0077B6FA /* VistasModelos */,
+				A160FD60289AF2BA0077B6FA /* Modelos */,
+				A160FD5F289AF2820077B6FA /* Vistas */,
 				A1C7176728832CC700A46A86 /* Shared */,
 				A1C7177628832CD300A46A86 /* macOS */,
 				A1C7177028832CD200A46A86 /* Products */,
@@ -59,9 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				A1C7176828832CC700A46A86 /* GameStreamApp.swift */,
-				A1C7176928832CC700A46A86 /* ContentView.swift */,
 				A1C7176A28832CD200A46A86 /* Assets.xcassets */,
-				A1EF23B0288DBF5700202F1F /* Home.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -183,8 +216,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A160FD63289AF3130077B6FA /* Model.swift in Sources */,
 				A1C7177A28832CD300A46A86 /* ContentView.swift in Sources */,
 				A1EF23B1288DBF5700202F1F /* Home.swift in Sources */,
+				A160FD5E289AF1A50077B6FA /* GamesView.swift in Sources */,
+				A160FD65289AF33C0077B6FA /* ViewModel.swift in Sources */,
 				A1C7177828832CD300A46A86 /* GameStreamApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

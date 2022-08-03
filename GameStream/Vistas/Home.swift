@@ -31,7 +31,8 @@ struct Home: View {
             
             
             
-            Text("pantalla juegos")
+            //Text("pantalla juegos")
+              GamesView()
                 .font(
                     .system(size:30,weight: .bold, design:.rounded))
                 .tabItem{
@@ -321,7 +322,7 @@ struct SubModuloHome:View {
                 }
                 
                 
-            }
+            }.padding(.bottom, 50)
             
             Text("RECOMENDADOS PARA TI")
             .font(.title3)
@@ -387,9 +388,78 @@ struct SubModuloHome:View {
                 }
                 
                 
-            }
+            }.padding(.bottom, 50)
             
             
+            Text("VIDEOS QUE PODRIAN GUSTARTE")
+            .font(.title3)
+            .foregroundColor(.white)
+            .bold()
+            .frame(minWidth: 0, maxWidth: .infinity,  alignment: .leading)
+            
+            
+            ScrollView(.horizontal, showsIndicators: false)
+            {
+                
+                HStack{
+                    
+                    Button(action: {
+                        url = urlVideos[5]
+                        print("URL: \(url)")
+                        
+                        isPlayerActive = true
+                        
+                    }, label: {
+                        
+                        Image("Abzu")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 240, height: 135)
+                        
+                        
+                    })
+                    
+                    
+                    Button(action: {
+                        url = urlVideos[6]
+                        print("URL: \(url)")
+                        
+                        isPlayerActive = true
+                        
+                    }, label: {
+                        
+                        Image("Crash Bandicoot")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 240, height: 135)
+                        
+                        
+                    })
+                    
+                    Button(action: {
+                        url = urlVideos[7]
+                        print("URL: \(url)")
+                        
+                        isPlayerActive = true
+                        
+                    }, label: {
+                        
+                        Image("DEATH STRANDING")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 240, height: 135)
+                        
+                        
+                    })
+                    
+                }
+                
+                
+            }.padding(.bottom, 100)
+            
+       
+
+
         }
         
         
