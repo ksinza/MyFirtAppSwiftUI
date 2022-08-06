@@ -201,8 +201,134 @@ struct Gallery:View {
             
         }.frame( maxWidth: .infinity, alignment: .leading)
         
+        ExtraViews()
     }
     
+    
+}
+
+struct  ExtraViews:View {
+    
+    var body: some View {
+        
+        VStack(alignment: .leading){
+            
+            Text("Comentarios").foregroundColor(.white).font(.title).padding(.leading)
+            
+            VStack{
+                
+                ZStack{
+                    
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color("blue-gray"))
+                        .padding(.horizontal, 8.0)
+                    
+                    VStack(alignment: .leading){
+                        
+                        HStack{
+                            
+                            Image("perfilejemplo")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 64, height: 64)
+                                .accentColor(.white)
+                                .padding([.top, .leading])
+                            
+                            VStack(alignment: .leading){
+                                
+                                Text("Lorem").bold().foregroundColor(Color.white)
+                                
+                                Text("Hace 18 horas").bold().foregroundColor(Color.white)
+
+                            }
+                            
+                        }
+                        
+                        Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum auctor, mauris lorem. ")
+                            .foregroundColor(.white)
+                            .padding(.leading, 0)
+                            .frame(height: 80)
+                        
+                        
+                        
+                        
+                    }
+                    
+                }
+                
+                
+                ZStack{
+                    
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color("blue-gray"))
+                        .padding(.horizontal, 8.0)
+                    
+                    VStack(alignment: .leading){
+                        
+                        HStack{
+                            
+                            Image("perfilejemplo")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 64, height: 64)
+                                .accentColor(.white)
+                                .padding([.top, .leading])
+                            
+                            VStack(alignment: .leading){
+                                
+                                Text("Amazing!!!").bold().foregroundColor(Color.white)
+                                
+                                Text("Hace 5 horas").bold().foregroundColor(Color.white)
+
+                            }
+                            
+                        }
+                        
+                        Text("Vestibulum auctor, mauris lorem molestie nibh.Lorem ipsum consectetur adipiscing elit. ")
+                            .foregroundColor(.white)
+                            .padding(.leading, 0)
+                            .frame(height: 80)
+                        
+                        
+                        
+                        
+                    }
+                    
+                }
+                
+                
+            }
+            
+            Text("JUEGOS SIMILARES").foregroundColor(.white)
+                .font(.title)
+                .padding(.leading)
+            
+            ScrollView(.horizontal, showsIndicators: false){
+                
+                
+                
+                HStack{
+                    Image("Abzu").resizable()
+                        .scaledToFit()
+                        .frame(width: 240, height: 135)
+                    
+                    
+                    Image("Crash Bandicoot").resizable()
+                        .scaledToFit()
+                        .frame(width: 240, height: 135)
+                    
+                    Image("DEATH STRANDING").resizable()
+                        .scaledToFit()
+                        .frame(width: 240, height: 135)
+                    
+                    
+                }
+                
+                
+            }
+            
+        }
+    }
     
 }
 
