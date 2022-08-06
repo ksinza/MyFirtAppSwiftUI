@@ -10,6 +10,8 @@
 		A160FD5E289AF1A50077B6FA /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160FD5D289AF1A50077B6FA /* GamesView.swift */; };
 		A160FD63289AF3130077B6FA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160FD62289AF3130077B6FA /* Model.swift */; };
 		A160FD65289AF33C0077B6FA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160FD64289AF33C0077B6FA /* ViewModel.swift */; };
+		A177A493289E92570097E9BA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A177A492289E92570097E9BA /* Kingfisher */; };
+		A177A495289E95FB0097E9BA /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177A494289E95FB0097E9BA /* GameView.swift */; };
 		A1B37B0F289018DF00A57156 /* imagenesDefault in Resources */ = {isa = PBXBuildFile; fileRef = A1B37B0E289018DF00A57156 /* imagenesDefault */; };
 		A1C7177828832CD300A46A86 /* GameStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7176828832CC700A46A86 /* GameStreamApp.swift */; };
 		A1C7177928832CD300A46A86 /* GameStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7176828832CC700A46A86 /* GameStreamApp.swift */; };
@@ -24,6 +26,7 @@
 		A160FD5D289AF1A50077B6FA /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
 		A160FD62289AF3130077B6FA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A160FD64289AF33C0077B6FA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		A177A494289E95FB0097E9BA /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		A1B37B0E289018DF00A57156 /* imagenesDefault */ = {isa = PBXFileReference; lastKnownFileType = folder; name = imagenesDefault; path = "../../../../Downloads/curso-desarrollo-app-swiftui-PantallaHomeProgramacionInterfacesEstaticas-C2/PlatziGameStream/Assets.xcassets/imagenesDefault"; sourceTree = "<group>"; };
 		A1C7176828832CC700A46A86 /* GameStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStreamApp.swift; sourceTree = "<group>"; };
 		A1C7176928832CC700A46A86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A177A493289E92570097E9BA /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +62,7 @@
 				A1C7176928832CC700A46A86 /* ContentView.swift */,
 				A1EF23B0288DBF5700202F1F /* Home.swift */,
 				A160FD5D289AF1A50077B6FA /* GamesView.swift */,
+				A177A494289E95FB0097E9BA /* GameView.swift */,
 			);
 			path = Vistas;
 			sourceTree = "<group>";
@@ -133,6 +138,9 @@
 			dependencies = (
 			);
 			name = "GameStream (iOS)";
+			packageProductDependencies = (
+				A177A492289E92570097E9BA /* Kingfisher */,
+			);
 			productName = "GameStream (iOS)";
 			productReference = A1C7176F28832CD200A46A86 /* GameStream.app */;
 			productType = "com.apple.product-type.application";
@@ -181,6 +189,9 @@
 				Base,
 			);
 			mainGroup = A1C7176228832CC700A46A86;
+			packageReferences = (
+				A177A491289E92570097E9BA /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = A1C7177028832CD200A46A86 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -222,6 +233,7 @@
 				A160FD5E289AF1A50077B6FA /* GamesView.swift in Sources */,
 				A160FD65289AF33C0077B6FA /* ViewModel.swift in Sources */,
 				A1C7177828832CD300A46A86 /* GameStreamApp.swift in Sources */,
+				A177A495289E95FB0097E9BA /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +500,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A177A491289E92570097E9BA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A177A492289E92570097E9BA /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A177A491289E92570097E9BA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A1C7176328832CC700A46A86 /* Project object */;
 }
