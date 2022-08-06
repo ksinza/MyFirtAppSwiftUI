@@ -12,6 +12,7 @@
 		A160FD65289AF33C0077B6FA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A160FD64289AF33C0077B6FA /* ViewModel.swift */; };
 		A177A493289E92570097E9BA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A177A492289E92570097E9BA /* Kingfisher */; };
 		A177A495289E95FB0097E9BA /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177A494289E95FB0097E9BA /* GameView.swift */; };
+		A177A497289ED40E0097E9BA /* SearchGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177A496289ED40E0097E9BA /* SearchGame.swift */; };
 		A1B37B0F289018DF00A57156 /* imagenesDefault in Resources */ = {isa = PBXBuildFile; fileRef = A1B37B0E289018DF00A57156 /* imagenesDefault */; };
 		A1C7177828832CD300A46A86 /* GameStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7176828832CC700A46A86 /* GameStreamApp.swift */; };
 		A1C7177928832CD300A46A86 /* GameStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C7176828832CC700A46A86 /* GameStreamApp.swift */; };
@@ -27,6 +28,7 @@
 		A160FD62289AF3130077B6FA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A160FD64289AF33C0077B6FA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A177A494289E95FB0097E9BA /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		A177A496289ED40E0097E9BA /* SearchGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGame.swift; sourceTree = "<group>"; };
 		A1B37B0E289018DF00A57156 /* imagenesDefault */ = {isa = PBXFileReference; lastKnownFileType = folder; name = imagenesDefault; path = "../../../../Downloads/curso-desarrollo-app-swiftui-PantallaHomeProgramacionInterfacesEstaticas-C2/PlatziGameStream/Assets.xcassets/imagenesDefault"; sourceTree = "<group>"; };
 		A1C7176828832CC700A46A86 /* GameStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStreamApp.swift; sourceTree = "<group>"; };
 		A1C7176928832CC700A46A86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				A160FD64289AF33C0077B6FA /* ViewModel.swift */,
+				A177A496289ED40E0097E9BA /* SearchGame.swift */,
 			);
 			path = VistasModelos;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				A160FD63289AF3130077B6FA /* Model.swift in Sources */,
 				A1C7177A28832CD300A46A86 /* ContentView.swift in Sources */,
 				A1EF23B1288DBF5700202F1F /* Home.swift in Sources */,
+				A177A497289ED40E0097E9BA /* SearchGame.swift in Sources */,
 				A160FD5E289AF1A50077B6FA /* GamesView.swift in Sources */,
 				A160FD65289AF33C0077B6FA /* ViewModel.swift in Sources */,
 				A1C7177828832CD300A46A86 /* GameStreamApp.swift in Sources */,
