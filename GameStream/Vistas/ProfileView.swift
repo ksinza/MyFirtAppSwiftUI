@@ -14,23 +14,31 @@ struct ProfileView: View {
     var body: some View {
         
         ZStack{
-          
+            Color("Marine").ignoresSafeArea()
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
+            
             VStack{
                 
                 Text("Perfil")
-                
-                .foregroundColor(Color.white)
-                .frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, alignment: .center)
-                .padding()
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.white)
+                    .frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, alignment: .center)
+                    .padding(.top,60)
 
                 VStack{
+                
                     
                     Image("perfilejemplo").resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 118.0, height: 118.0)
                         .clipShape(Circle())
-                    
-                    
+                   
+                    Text(nombreusuario)
+                        .fontWeight(.bold)
+
+                    .foregroundColor(Color.white)
+                   
                     
                 }.padding(EdgeInsets(top: 16, leading: 0, bottom: 32, trailing: 0))
                 
@@ -42,13 +50,13 @@ struct ProfileView: View {
 
                 ModuloAjustes()
                 
-                
-                
-            }
-              
+                Spacer()
+                Spacer()
+            }.ignoresSafeArea()
             
             
         }
+
         .onAppear(
         
             perform: {
@@ -56,14 +64,25 @@ struct ProfileView: View {
                 
                 print("revisando si tengo datos de usuario es mis UserDefaults")
                 
+                if UserDefaults.standard.object(forKey: "datosUsuario") != nil {
+                    
+                    nombreusuario = UserDefaults.standard.stringArray(forKey: "datosUsuario")![2]
+                    
+                    print("nombre de usuario es \(nombreusuario)")
+
+                    
+                }else{
+                    
+                    print(" no encontre nombre de usuario")
+
+                    
+                }
                 
             }
             
         )
-        .background(Color("Marine"))
-        .ignoresSafeArea()
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+       
+      
       
         
         

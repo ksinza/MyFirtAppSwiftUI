@@ -87,7 +87,7 @@ struct  InicioSessionView: View {
     
     @State var passwords = ""
     @State var isPantallaHomeActive = false
-    
+    @State  var showalert: Bool = false
     var body: some View {
         
         ScrollView {
@@ -173,7 +173,8 @@ struct  InicioSessionView: View {
                     
                         
                     //.frame(width: .infinity, height: 100, alignment: .center)
-                })
+                }).alert( isPresented: $showalert, content: {
+                    Alert(title: Text("Error"), message: Text("No se encontró nigún usuario o la contraseña es incorrecta"), dismissButton: .default(Text("Entendido")))})
 
                 Text("Inicia sesion con redes sociales")
                     .foregroundColor(.white)
@@ -241,8 +242,32 @@ struct  InicioSessionView: View {
     
     func iniciarSession(){
         
-        print("Estoy Iniciando sesion")
-        isPantallaHomeActive = true
+        let objetoDatosUsuario = SaveData()
+        
+        print("Mi correo es \(correo)  y mi password es \(passwords) ")
+        
+        
+        if objetoDatosUsuario.validar(correo: correo, password: passwords){
+            
+            showalert = false
+            isPantallaHomeActive = true
+            print("Estoy Iniciando sesion")
+        
+        }else{
+            
+            isPantallaHomeActive = false
+
+          //  isPantallaHomeActive.toggle()
+                       print("Tus datos son incorrectos")
+            showalert = true
+            
+           
+                
+           
+          
+        }
+        
+     
     }
 }
 
@@ -444,6 +469,31 @@ struct  RegistroView: View {
         }
         
     }
+    
+    
+    func registrate(){
+        
+        print("Estoy registratandome")
+        
+        if passwords == Confirmepasswords {
+            
+            let objetoActualizadorDatos = SaveData()
+            
+            let resultado = objetoActualizadorDatos.guardarDatos(correo: correo, password: passwords, nombre: "")
+            
+            
+            print("se guardaron los datos con exito?:\(resultado)")
+            
+            
+        }else{
+            
+            print("Pasword diferentes, vuele a intentarlo")
+
+        }
+        
+        
+    }
+
 }
 
 
@@ -463,10 +513,6 @@ struct ContentView_Previews: PreviewProvider {
 // funcs
 
 
-func registrate(){
-    
-    print("Estoy registratandome")
-}
 
 func iniciarSessionTwitter(){
     
