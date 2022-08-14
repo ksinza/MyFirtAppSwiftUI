@@ -255,11 +255,12 @@ struct  InicioSessionView: View {
         
         }else{
             
-            isPantallaHomeActive = false
+           // isPantallaHomeActive = true
+          isPantallaHomeActive = false
 
           //  isPantallaHomeActive.toggle()
                        print("Tus datos son incorrectos")
-            showalert = true
+           showalert = true
             
            
                 
