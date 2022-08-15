@@ -27,7 +27,7 @@ struct ContentView: View {
                 
                 
             }.navigationBarHidden(true)
-        }
+        }.navigationViewStyle(StackNavigationViewStyle()) // this line is for full screen in ipad
     }
 }
 
