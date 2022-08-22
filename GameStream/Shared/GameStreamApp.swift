@@ -13,6 +13,8 @@ struct GameStreamApp: App {
         WindowGroup {
          ContentView()
          //   SistemaPuntos()
+            
+            
         }
     }
 }

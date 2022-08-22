@@ -21,6 +21,8 @@ struct ContentView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 250)
                         .padding( .bottom, 42 )
+                        .offset(x: 0.0, y: 10.0) // ipad position
+                    
                     
                     InicioYRegistroView()
                 }

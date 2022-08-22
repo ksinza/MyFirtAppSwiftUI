@@ -21,10 +21,10 @@ struct SistemaPuntos: View {
 
 struct SistemaPuntos_Previews: PreviewProvider {
     static var previews: some View {
-        SistemaPuntos()
+       // SistemaPuntos()
         
        // SistemaPuntos()
-
+        OffsetPosition()
         
     }
 }
