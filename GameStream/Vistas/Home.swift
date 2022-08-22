@@ -189,6 +189,10 @@ struct SubModuloHome:View {
     
 //    let urlVideos:[String] = ["https://cdn.cloudflare.steamstatic.com/steam/apps/256658589/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256671638/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256720061/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256814567/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256705156/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256801252/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256757119/movie480.mp4"]
     
+    var dispositivo = UIDevice.current.model
+    
+    
+    
     var body: some View{
         
         
@@ -297,6 +301,89 @@ struct SubModuloHome:View {
             
             ScrollView(.horizontal, showsIndicators: false)
             {
+                if(dispositivo == "iPad"){
+                    HStack{
+                        
+                        Button(action: {
+                            
+                            print("Pulse categoria FPS")
+                            
+                        }, label: {
+                            
+                            ZStack{
+                                
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color("blue-gray"))
+                                    .frame(width:320, height: 180)
+                                
+                                
+                                Image("FPS")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 84, height: 84)
+                                
+                                
+                                
+                                
+                                
+                            }
+                            
+                            
+                        })
+                        
+                        
+                        Button(action: {
+                            
+                            print("Pulse categoria RPG")
+                            
+                        }, label: {
+                            
+                            ZStack{
+                                
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color("blue-gray"))
+                                    .frame(width: 320, height: 180)
+                                
+                                
+                                Image("RPG")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 84, height: 84)
+                                
+                                
+                                
+                                
+                                
+                            }
+                            
+                            
+                        })
+                        
+                        Button(action: {
+                            
+                            print("Pulse categoria OpenWorld")
+                        }, label: {
+                            
+                            ZStack{
+                                
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color("blue-gray"))
+                                    .frame(width: 320, height: 180)
+                                
+                                
+                                Image("OpenWorld")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 84, height: 84)
+                                
+                            }
+                            
+                            
+                        })
+                        
+                    }
+                    
+                }else{
                 
                 HStack{
                     
@@ -378,7 +465,7 @@ struct SubModuloHome:View {
                     })
                     
                 }
-                
+                }
                 
             }.padding(.bottom, 50)
             

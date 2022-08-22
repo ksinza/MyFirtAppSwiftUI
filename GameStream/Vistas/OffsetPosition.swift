@@ -10,17 +10,26 @@ import SwiftUI
 struct OffsetPosition: View {
     var body: some View {
        
+        //geometry reader
         
+        GeometryReader ( content: { geometry in
         VStack{
             
+            Image("platzi").resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: geometry.size.width/2 , height: geometry.size.height/3)
+            // the image has size about geometry vstack
+           // Offsets() // deforma la imagen
+            
+            //Positions() // acomoda de acuerdo a su contenedor
             
             
-           // Offsets()
             
-            Positions()
             
-        }
+        }.frame( maxWidth: .infinity, maxHeight: .infinity)
         
+        
+        })
         
     }
 }
